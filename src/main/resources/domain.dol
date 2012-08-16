@@ -1,0 +1,18 @@
+package eu.trentorise.smartcampus.domain.semantic;
+
+import it.sayservice.platform.compiler.domain.model.annotations.Service;
+
+DomainObject SemanticService {
+
+    @Service(serviceId="eu.trentorise.smartcampus.services.semantic.SemanticService", methodName="CreateSCEntity", converter="eu.trentorise.smartcampus.domain.semantic.CreateSCEntityDataConverter")
+    operation createSCEntity(type: String, name: String, description: String, tags: Tag[], relations: Long[]) returns Long;
+
+    @Service(serviceId="eu.trentorise.smartcampus.services.semantic.SemanticService", methodName="CreateEntity", converter="eu.trentorise.smartcampus.domain.semantic.CreateEntityDataConverter")
+    operation createEntity(actorId: Long, type: String, name: String, description: String, tags: Tag[], relations: Long[]) returns Long;
+
+    @Service(serviceId="eu.trentorise.smartcampus.services.semantic.SemanticService", methodName="UpdateEntity", converter="eu.trentorise.smartcampus.domain.semantic.UpdateEntityDataConverter")
+    operation updateEntity(id: Long, name: String, description: String, tags: Tag[], relations: Long[]) returns Boolean;
+
+    @Service(serviceId="eu.trentorise.smartcampus.services.semantic.SemanticService", methodName="DeleteEntity", converter="eu.trentorise.smartcampus.domain.semantic.DeleteEntityDataConverter")
+    operation deleteEntity(id: Long) returns Boolean;
+}
