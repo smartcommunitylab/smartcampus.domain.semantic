@@ -2,9 +2,9 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>eu.trentorise.smartcampus</groupId>
-	<artifactId>smartcampus.vas.discovertrento.domain</artifactId>
+	<artifactId>smartcampus.domain.semantic</artifactId>
 	<packaging>bundle</packaging>
-	<version>1.1</version>
+	<version>1.0</version>
 
 	<parent>
 		<groupId>it.sayservice.platform</groupId>
@@ -48,7 +48,12 @@
 					<instructions>
 						<Include-Resource>{maven-resources}</Include-Resource>
 						<Export-Package>eu.trentorise.smartcampus.domain.semantic.*</Export-Package>
-						<Import-Package>!smartcampus.platform.compiler.*,*</Import-Package>
+						<Import-Package>
+						it.sayservice.platform.core.domain.*,
+						it.sayservice.platform.core.common.util,
+						it.sayservice.platform.core.domain.osgi.interfaces,
+						it.sayservice.platform.core.message,
+						*</Import-Package>
 					</instructions>
 				</configuration>
 			</plugin>
