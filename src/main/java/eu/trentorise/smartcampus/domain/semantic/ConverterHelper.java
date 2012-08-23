@@ -9,9 +9,9 @@ public class ConverterHelper {
 
 	public static Data toData(Map<String, Object> parameters) {
 		Data.Builder data = Data.newBuilder();
-		if (parameters.containsKey("type")) data.setType(parameters.get("type").toString());
-		if (parameters.containsKey("name")) data.setName(parameters.get("name").toString());
-		if (parameters.containsKey("description")) data.setDescription(parameters.get("description").toString());
+		if (parameters.get("type") != null) data.setType((String)parameters.get("type"));
+		if (parameters.get("name") != null) data.setName((String)parameters.get("name"));
+		if (parameters.get("description") != null) data.setDescription((String)parameters.get("description"));
 		if (parameters.get("tags") != null) {
 			for (Tag tag : (Tag[])parameters.get("tags")) {
 				eu.trentorise.smartcampus.services.semantic.data.message.Semantic.Tag.Builder tagBuilder = 
