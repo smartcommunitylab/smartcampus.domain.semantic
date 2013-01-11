@@ -64,9 +64,6 @@
 				
 				<configuration>
 					<destination>${project.basedir}/src/main/java</destination>
-<!--                     <domains> -->
-<!--                         <domain>${project.basedir}/src/main/resources/domain.dol</domain> -->
-<!--                     </domains> -->
 					<domainSpec>${project.basedir}/src/main/resources/domain.dol</domainSpec>
 					<generateSpringConf>true</generateSpringConf>
 				</configuration>
@@ -82,5 +79,16 @@
 		</plugins>
 	</build>
 
-
+    <repositories>
+        <repository>
+            <id>SmartCampus</id>
+            <url>http://repository.smartcampuslab.it/content/groups/public</url>
+        </repository>
+    </repositories> 
+    <pluginRepositories>
+    	<pluginRepository>
+            <id>SmartCampus</id>
+            <url>http://repository.smartcampuslab.it/content/groups/public</url>
+    	</pluginRepository>
+    </pluginRepositories>
 </project>
